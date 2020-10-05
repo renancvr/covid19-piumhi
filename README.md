@@ -4,7 +4,7 @@
 
  * Os dados presentes no código são divulgados nas redes oficias da Prefeitura da Piumhi
 
- * Tais dados são divulgados em imagens e não em formatos geralmente usados em data science (_.csv_, por exemplo).  Por isso eles são inseridos manualmente no código a cada atualização
+ * Tais dados são divulgados em imagens e não em formatos geralmente usados em data science (_.csv_, por exemplo).  Por isso eles são inseridos manualmente na planilha de dados a cada atualização
 
  * É importante lembrar que em alguns dias do mês de Junho não houve divulgação de dados, e como é comum no resto do país, também não há divulgação nos fins de semana. Isso pode gerar distorções nos gráficos
 
