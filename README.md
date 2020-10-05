@@ -8,4 +8,4 @@
 
  * É importante lembrar que em alguns dias do mês de Junho não houve divulgação de dados, e como é comum no resto do país, também não há divulgação nos fins de semana. Isso pode gerar distorções nos gráficos
 
-_Observação: para rodar o programa é necessária a instalção das bibliotecas numpy e matplot_
+_Observação: para rodar o programa é necessária a instalção das bibliotecas numpy, matplot e pandas_
