@@ -36,8 +36,14 @@ for i in range(len(casos)):
 casos_ativos = []
 
 for i in range(len(casos)):
-	ativos = (casos[i] - recuperados[i]) - mortes[len(mortes)-1]
+	ativos = (casos[i] - recuperados[i]) - mortes[i]
 	casos_ativos.append(ativos)
+
+#atualizar a tabela de dados com casos diários e casos ativos
+dados_atualizados = [casos,mortes,recuperados,dias,casos_dia,casos_ativos]
+
+df = pd.DataFrame(dados_atualizados,index=['Casos Confirmados','Óbitos','Recuperados','Dia','Casos Diários','Casos Ativos']).T
+df.to_excel('dados.xlsx')
 
 #cálculo taxa de mortalidade
 taxa = round((mortes[len(mortes)-1] * 100) / casos[len(casos)-1],2)
@@ -45,7 +51,7 @@ taxa = round((mortes[len(mortes)-1] * 100) / casos[len(casos)-1],2)
 
 #criação de informações para a legenda
 string_mortalidade = 'Taxa de mortalidade: ' + str(taxa) + '%'
-string_ativos = 'Casos ativos: ' + str(casos_ativos[len(casos_ativos)-1])
+string_ativos = 'Casos ativos: ' + str(int(casos_ativos[len(casos_ativos)-1]))
 string_mortes = 'Total de mortes: ' + str(mortes[len(mortes)-1])
 
 #calcular número R
@@ -73,8 +79,9 @@ plt.plot(x,y_casos,color='blue')
 plt.plot(x,y_recuperados,color='green')
 plt.plot(x,y_casos_ativos,color='purple')
 
+plt.ylabel('Média móvel de 7 dias')
 
-plt.xlabel('Dias (04/06 - '+str(dias[len(y_casos)+1])+'/09 )')
+plt.xlabel('Dias (04/06 - '+str(int(dias[len(dias)-1]))+'/11 )')
 plt.grid(True)
 plt.legend(handles=[blue_patch,purple_patch,green_patch,taxa_patch,ativos_patch])
 
@@ -86,8 +93,9 @@ mortes_patch = mpatches.Patch(color='white',label=string_mortes)
 plt.plot(x,y_mortes,color='red')
 plt.plot(x,y_casos_dia,color='orange')
 
+plt.ylabel('Média móvel de 7 dias')
 
-plt.xlabel('Dias (04/06 - '+str(dias[len(x)+1])+'/09 )')
+plt.xlabel('Dias (04/06 - '+str(int(dias[len(dias)-1]))+'/11 )')
 plt.grid(True)
 plt.legend(handles=[red_patch,orange_patch,taxa_patch,mortes_patch])
 
