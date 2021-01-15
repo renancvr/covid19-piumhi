@@ -75,13 +75,15 @@ green_patch = mpatches.Patch(color='green',label='Recuperados')
 taxa_patch = mpatches.Patch(color = 'white', label = string_mortalidade)
 ativos_patch = mpatches.Patch(color = 'white', label = string_ativos)
 
+legenda = 'Dias (04/06/2020 - '+str(int(dias[len(dias)-1]))+'/01/2021 )'
+
 plt.plot(x,y_casos,color='blue')
 plt.plot(x,y_recuperados,color='green')
 plt.plot(x,y_casos_ativos,color='purple')
 
 plt.ylabel('Média móvel de 7 dias')
 
-plt.xlabel('Dias (04/06 - '+str(int(dias[len(dias)-1]))+'/11 )')
+plt.xlabel(legenda)
 plt.grid(True)
 plt.legend(handles=[blue_patch,purple_patch,green_patch,taxa_patch,ativos_patch])
 
@@ -95,7 +97,7 @@ plt.plot(x,y_casos_dia,color='orange')
 
 plt.ylabel('Média móvel de 7 dias')
 
-plt.xlabel('Dias (04/06 - '+str(int(dias[len(dias)-1]))+'/11 )')
+plt.xlabel(legenda)
 plt.grid(True)
 plt.legend(handles=[red_patch,orange_patch,taxa_patch,mortes_patch])
 
