@@ -75,7 +75,7 @@ green_patch = mpatches.Patch(color='green',label='Recuperados')
 taxa_patch = mpatches.Patch(color = 'white', label = string_mortalidade)
 ativos_patch = mpatches.Patch(color = 'white', label = string_ativos)
 
-legenda = 'Dias (04/06/2020 - '+str(int(dias[len(dias)-1]))+'/03/2021 )'
+legenda = 'Dias (04/06/2020 - '+str(int(dias[len(dias)-1]))+'/08/2021 )'
 
 plt.plot(x,y_casos,color='blue')
 plt.plot(x,y_recuperados,color='green')
